@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PAN Card Request Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f8fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .form-section {
+      margin-bottom: 25px;
+      border-left: 4px solid #0077cc;
+      padding-left: 15px;
+    }
+
+    .form-section h3 {
+      margin-top: 0;
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .checkboxes,
+    .radios {
+      margin-bottom: 15px;
+    }
+
+    .checkboxes label,
+    .radios label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+
+    .row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .row .col {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #0077cc;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>PAN Card Request / Correction Form</h2>
+
+  <form action="submit_pan_form.php" method="POST">
+    <div class="form-section">
+      <h3>1. Full Name</h3>
+      <div class="checkboxes">
+        <label><input type="checkbox" name="title" value="Shri"> Shri</label>
+        <label><input type="checkbox" name="title" value="Smt"> Smt</label>
+        <label><input type="checkbox" name="title" value="Kumari"> Kumari</label>
+        <label><input type="checkbox" name="title" value="M/s"> M/s</label>
+      </div>
+      <input type="text" name="last_name" placeholder="Last Name / Surname" required>
+      <input type="text" name="first_name" placeholder="First Name" required>
+      <input type="text" name="middle_name" placeholder="Middle Name">
+      <input type="text" name="printed_name" placeholder="Name to Print on PAN Card">
+    </div>
+
+    <div class="form-section">
+      <h3>2. Father's Name</h3>
+      <input type="text" name="father_last" placeholder="Father's Last Name">
+      <input type="text" name="father_first" placeholder="Father's First Name">
+      <input type="text" name="father_middle" placeholder="Father's Middle Name">
+    </div>
+
+    <div class="form-section">
+      <h3>3. Date of Birth & Gender</h3>
+      <div class="row">
+        <div class="col">
+          <label>Date of Birth</label>
+          <input type="date" name="dob">
+        </div>
+        <div class="col">
+          <label>Gender</label>
+          <div class="radios">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>7. Address for Communication</h3>
+      <div class="radios">
+        <label><input type="radio" name="address_type" value="Residence"> Residence</label>
+        <label><input type="radio" name="address_type" value="Office"> Office</label>
+      </div>
+      <input type="text" name="address" placeholder="Full Address">
+      <input type="text" name="city" placeholder="City / District">
+      <input type="text" name="state" placeholder="State / Union Territory">
+      <input type="text" name="pincode" placeholder="PIN Code">
+      <input type="text" name="country" placeholder="Country">
+    </div>
+
+    <div class="form-section">
+      <h3>9. Contact Details</h3>
+      <div class="row">
+        <div class="col"><input type="text" name="country_code" placeholder="Country Code"></div>
+        <div class="col"><input type="text" name="area_code" placeholder="Area / STD Code"></div>
+        <div class="col"><input type="text" name="mobile" placeholder="Mobile Number"></div>
+      </div>
+      <input type="email" name="email" placeholder="Email Address">
+    </div>
+
+    <div class="form-section">
+      <h3>10. Aadhaar Number</h3>
+      <input type="text" name="aadhaar" placeholder="Aadhaar Number (Optional)">
+    </div>
+
+    <div class="form-section">
+      <h3>11. Other PANs (if any)</h3>
+      <div class="row">
+        <div class="col"><input type="text" name="pan1" placeholder="PAN 1"></div>
+        <div class="col"><input type="text" name="pan2" placeholder="PAN 2"></div>
+        <div class="col"><input type="text" name="pan3" placeholder="PAN 3"></div>
+        <div class="col"><input type="text" name="pan4" placeholder="PAN 4"></div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>12. Declaration</h3>
+      <input type="text" name="applicant_name" placeholder="Applicant Name">
+      <input type="text" name="capacity" placeholder="Capacity">
+      <input type="number" name="documents_count" placeholder="Number of Enclosures">
+      <input type="text" name="place" placeholder="Place">
+      <label>Date: <input type="date" name="form_date"></label>
+    </div>
+
+    <button type="submit">Submit Form</button>
+  </form>
+</div>
+
+</body>
+</html>

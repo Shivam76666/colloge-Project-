@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aadhaar Enrolment/Update Form</title>
+</head>
+<body>
+    <h2>Aadhaar Enrolment/Update Form</h2>
+    <form action="submit_form.php" method="post">
+        <label>Pre Enrolment ID:</label><br>
+        <input type="text" name="pre_enrollment_id"><br><br>
+
+        <label>Aadhaar Number:</label><br>
+        <input type="text" name="aadhaar_number"><br><br>
+
+        <label>Resident Type:</label><br>
+        <select name="resident_type">
+            <option value="Resident">Resident</option>
+            <option value="Non-Resident Indian (NRI)">Non-Resident Indian (NRI)</option>
+        </select><br><br>
+
+        <label>Update Type:</label><br>
+        <input type="checkbox" name="update_type[]" value="Photo">Photo
+        <input type="checkbox" name="update_type[]" value="Fingerprint">Fingerprint
+        <input type="checkbox" name="update_type[]" value="Iris">Iris
+        <input type="checkbox" name="update_type[]" value="DOB">DOB
+        <input type="checkbox" name="update_type[]" value="Address">Address
+        <input type="checkbox" name="update_type[]" value="Name">Name
+        <input type="checkbox" name="update_type[]" value="Gender">Gender<br><br>
+
+        <label>Full Name:</label><br>
+        <input type="text" name="full_name"><br><br>
+
+        <label>Gender:</label><br>
+        <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Transgender">Transgender</option>
+        </select><br><br>
+
+        <label>Date of Birth:</label><br>
+        <input type="date" name="dob"><br>
+        <input type="radio" name="dob_type" value="Declared">Declared
+        <input type="radio" name="dob_type" value="Verified">Verified<br><br>
+
+        <label>Address:</label><br>
+        <textarea name="address" rows="4" cols="50"></textarea><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+
+        <label>Mobile:</label><br>
+        <input type="text" name="mobile"><br><br>
+
+        <label>PIN Code:</label><br>
+        <input type="text" name="pin_code"><br><br>
+
+        <label>Relative Name:</label><br>
+        <input type="text" name="relative_name"><br><br>
+
+        <label>Relation:</label><br>
+        <select name="relative_type">
+            <option value="Father">Father</option>
+            <option value="Mother">Mother</option>
+            <option value="Guardian">Guardian</option>
+            <option value="Husband">Husband</option>
+            <option value="Wife">Wife</option>
+        </select><br><br>
+
+        <label>Verification Type:</label><br>
+        <select name="verification_type">
+            <option value="Document Based">Document Based</option>
+            <option value="Introducer Based">Introducer Based</option>
+            <option value="HoF Based">HoF Based</option>
+        </select><br><br>
+
+        <label>POI (Proof of Identity):</label><br>
+        <input type="text" name="poi"><br><br>
+
+        <label>POA (Proof of Address):</label><br>
+        <input type="text" name="poa"><br><br>
+
+        <label>Date of Birth Document:</label><br>
+        <input type="text" name="dob_doc"><br><br>
+
+        <label>Introducer/HoF Name:</label><br>
+        <input type="text" name="introducer_name"><br><br>
+
+        <label>Introducer Aadhaar Number:</label><br>
+        <input type="text" name="introducer_aadhaar"><br><br>
+
+        <label>Signature (text for now):</label><br>
+        <input type="text" name="introducer_signature"><br><br>
+
+        <input type="submit" value="Submit Form">
+    </form>
+</body>
+</html>
